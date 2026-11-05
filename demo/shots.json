@@ -1,0 +1,33 @@
+[
+  {
+    "name": "overview",
+    "steps": [{ "click": "role=button[name=/Scan Library Groups/]" }, { "waitFor": "[data-testid=summary-bar]" }]
+  },
+  {
+    "name": "findings",
+    "steps": [{ "click": "role=button[name=/Scan Library Groups/]" }, { "waitFor": "[data-testid=summary-bar]" }],
+    "selector": ".ax-disclosure:has(span:text-is('payments-worker-prod'))"
+  },
+  {
+    "name": "rules",
+    "steps": [{ "click": "role=tab[name=/Built-in Rules/]" }, { "wait": 300 }]
+  },
+  {
+    "name": "patterns",
+    "steps": [
+      { "click": "role=tab[name=/Custom Patterns/]" },
+      { "click": "role=button[name=/Add Pattern/]" },
+      { "fill": "input[placeholder='e.g. slack-webhook']", "value": "sftp-login-name" },
+      { "fill": "input[placeholder='e.g. Slack webhook URL pattern']", "value": "Variable name contains an SFTP user or password" },
+      { "fill": "input[placeholder^='e.g. hooks']", "value": "s?ftp[_-]?(?:user|pass(?:word)?)" },
+      { "fill": "input[placeholder='e.g. SlackWebhookUrl']", "value": "SftpPassword" },
+      { "wait": 300 }
+    ],
+    "height": 920
+  },
+  {
+    "name": "history",
+    "steps": [{ "click": "role=button[name=/Scan Library Groups/]" }, { "waitFor": "[data-testid=summary-bar]" }, { "click": "role=tab[name=/History/]" }, { "wait": 300 }],
+    "height": 640
+  }
+]

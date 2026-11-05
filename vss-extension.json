@@ -1,0 +1,109 @@
+{
+    "manifestVersion": 1,
+    "id": "library-secret-scanner",
+    "version": "1.0.0",
+    "name": "Library Secret Scanner",
+    "description": "Scans Azure DevOps Library variable groups to identify values that should be marked as secret using regex pattern matching.",
+    "publisher": "adam-wheater",
+    "categories": ["Azure Pipelines"],
+    "tags": [
+        "security",
+        "secrets",
+        "library",
+        "variable-groups",
+        "pipelines",
+        "scanning",
+        "compliance",
+        "best-practices"
+    ],
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "icons": {
+        "default": "static/icon.png"
+    },
+    "screenshots": [
+        { "path": "static/screenshots/overview.png" },
+        { "path": "static/screenshots/findings.png" },
+        { "path": "static/screenshots/rules.png" },
+        { "path": "static/screenshots/patterns.png" },
+        { "path": "static/screenshots/history.png" }
+    ],
+    "content": {
+        "details": {
+            "path": "overview.md"
+        },
+        "license": {
+            "path": "LICENSE"
+        }
+    },
+    "links": {
+        "repository": {
+            "uri": "https://github.com/adam-wheater/azure-devops-library-secret-scanner"
+        },
+        "issues": {
+            "uri": "https://github.com/adam-wheater/azure-devops-library-secret-scanner/issues"
+        },
+        "support": {
+            "uri": "https://github.com/adam-wheater/azure-devops-library-secret-scanner/issues"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/adam-wheater/azure-devops-library-secret-scanner"
+    },
+    "branding": {
+        "color": "#0078d4",
+        "theme": "dark"
+    },
+    "galleryFlags": [
+        "Preview"
+    ],
+    "contributions": [
+        {
+            "id": "secret-scanner-hub",
+            "type": "ms.vss-web.hub",
+            "description": "Library Secret Scanner hub under Pipelines",
+            "targets": [
+                "ms.vss-build-web.build-release-hub-group"
+            ],
+            "properties": {
+                "name": "Secret Scanner",
+                "order": 99,
+                "uri": "dist/SecretScanner/SecretScanner.html",
+                "icon": {
+                    "light": "static/icon.png",
+                    "dark": "static/icon.png"
+                }
+            }
+        }
+    ],
+    "scopes": [
+        "vso.variablegroups_read",
+        "vso.variablegroups_manage",
+        "vso.project",
+        "vso.build",
+        "vso.code"
+    ],
+    "demands": [],
+    "files": [
+        {
+            "path": "dist",
+            "addressable": true
+        },
+        {
+            "path": "static",
+            "addressable": true
+        },
+        {
+            "path": "overview.md",
+            "addressable": true
+        },
+        {
+            "path": "LICENSE",
+            "addressable": true
+        }
+    ]
+}
